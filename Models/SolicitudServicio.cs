@@ -9,22 +9,22 @@ namespace TecnoGasPortal.Models
 
         [Required(ErrorMessage = "El nombre del cliente es obligatorio.")]
         [Display(Name = "Cliente")]
-        public string Cliente { get; set; }
+        public required string Cliente { get; set; }
 
         [Required(ErrorMessage = "El teléfono es obligatorio.")]
         [Display(Name = "Teléfono")]
-        public string Telefono { get; set; }
+        public required string Telefono { get; set; }
 
         [Required(ErrorMessage = "El distrito es obligatorio.")]
         [Display(Name = "Distrito")]
-        public string Distrito { get; set; }
+        public required string Distrito { get; set; }
 
         [Required(ErrorMessage = "El tipo de servicio es obligatorio.")]
         [Display(Name = "Tipo de Servicio")]
-        public string TipoServicio { get; set; } // Instalación, Mantenimiento, Revisión, Fuga
+        public required string TipoServicio { get; set; } // Instalación, Mantenimiento, Revisión, Fuga
 
         [Display(Name = "Descripción")]
-        public string Descripcion { get; set; }
+        public string? Descripcion { get; set; }
 
         [Display(Name = "Fecha de Registro")]
         public DateTime FechaRegistro { get; set; } = DateTime.Now;
