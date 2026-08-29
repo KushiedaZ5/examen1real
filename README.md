@@ -5,12 +5,12 @@ Aplicación web ASP.NET Core MVC (.NET 10) para gestionar solicitudes de servici
 ## Tecnologías
 - ASP.NET Core MVC (.NET 10)
 - Entity Framework Core + SQLite
-- Bootstrap 5 (incluido por defecto en el template)
+- Bootstrap 5
 - Docker (para despliegue en Render)
 
 ## Funcionalidades
 - **Registrar solicitud**: formulario con Cliente, Teléfono, Distrito, Tipo de Servicio y Descripción
-- **Listar solicitudes**: tabla con todas las solicitudes ordenadas por fecha
+- **Listar solicitudes**: tabla con todas las solicitudes ordenadas por fecha descendente
 
 ## Ejecutar localmente
 
@@ -32,22 +32,27 @@ La aplicación estará disponible en `http://localhost:5000`.
 El proyecto incluye un `Dockerfile` multi-stage. Para desplegar en Render:
 
 1. Crea un nuevo **Web Service** en [render.com](https://render.com)
-2. Conecta tu repositorio GitHub (`evaluacion20262`)
-3. Selecciona **Docker** como entorno
+2. Conecta el repositorio GitHub: `https://github.com/KushiedaZ5/examen1`
+3. Selecciona **Docker** como entorno de ejecución
 4. Render detectará el `Dockerfile` automáticamente
-5. Puerto: `8080`
+5. Puerto expuesto: `8080`
+6. Variable de entorno: `ASPNETCORE_URLS=http://+:8080`
 
-> La base de datos SQLite (`tecnogas.db`) se crea automáticamente al iniciar el contenedor gracias a `database update` en el entrypoint.
+> La base de datos SQLite (`tecnogas.db`) se crea automáticamente al arrancar el contenedor gracias a `db.Database.Migrate()` en `Program.cs`.
+
+## URL de la aplicación en Render
+
+> ⏳ URL disponible tras el despliegue en Render
 
 ## Estructura de ramas (Git)
 
 ```
 main
  └── develop
-       ├── feature/modelo-sqlite       → Pregunta 1
-       ├── feature/registro-solicitud  → Pregunta 2
-       └── feature/listado-solicitudes → Pregunta 3
+       ├── feature/modelo-sqlite       → Pregunta 1: Modelo + EF Core + SQLite
+       ├── feature/registro-solicitud  → Pregunta 2: Registro de solicitudes (Insert)
+       └── feature/listado-solicitudes → Pregunta 3: Listado de solicitudes (Select)
 ```
 
 ## Repositorio GitHub
-- Nombre: `evaluacion20262`
+- URL: [https://github.com/KushiedaZ5/examen1](https://github.com/KushiedaZ5/examen1)
