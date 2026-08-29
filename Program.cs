@@ -1,6 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using TecnoGasPortal.Data;
 
+Environment.SetEnvironmentVariable("DOTNET_USE_POLLING_FILE_WATCHER", "true");
+Environment.SetEnvironmentVariable("DOTNET_HOSTBUILDER__RELOADCONFIGONCHANGE", "false");
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
