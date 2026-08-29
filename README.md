@@ -42,7 +42,7 @@ El proyecto incluye un `Dockerfile` multi-stage. Para desplegar en Render:
 
 ## URL de la aplicación en Render
 
-> ⏳ URL disponible tras el despliegue en Render
+🌐 **https://examen1-mj4x.onrender.com**
 
 ## Estructura de ramas (Git)
 
